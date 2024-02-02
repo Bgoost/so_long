@@ -1,0 +1,38 @@
+NAME = so_long
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -MMD
+
+MLX_MAKE=make -s -C mlx/
+mlx=mlx/libmlx.a
+
+SRCS = 	so_long.c
+
+
+OBJ = $(SRCS:.c=.o)
+
+all: $(NAME)
+
+$(NAME): mlx $(OBJ)
+	$(CC) $(CFLAGS) -Imlx  $(OBJ) -o $@
+
+
+
+-include $(DEP)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -Lmlx -lmlx -framework OpenGL -framework AppKit -c $< -o $@
+
+
+mlx:
+	$(MLX_MAKE)
+
+clean:
+	$(MLX_MAKE) clean
+	rm -rf $(OBJ) $(DEP)
+
+fclean: clean
+	$(MLX_MAKE) fclean
+	rm -rf $(NAME)
+
+re: fclean all
+.PHONY: all mlx clean fclean re
