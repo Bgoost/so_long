@@ -28,12 +28,26 @@ OBJ = $(SRCS:.c=.o)
 
 
 %.o : %.c Makefile
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
+	
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) -o $(NAME) $(OBJ)
+	@$(CC) -o $(NAME) $(OBJ)
+	@echo -n "$(GREEN)$(BOLD). "
+	@sleep 0.2
+	@echo -n ". "
+	@sleep 0.2
+	@echo -n ". "
+	@sleep 0.2
+	@echo -n "COMPILING "
+	@sleep 0.2
+	@echo -n ". "
+	@sleep 0.2
+	@echo -n ". "
+	@sleep 0.2
+	@echo ".$(ENDCOLOR)"
 
 clean:
 	@rm -rf $(OBJ)
@@ -43,22 +57,20 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo -e "\e[31mRed text\e[0m\n"
-	# @echo  "$(GREEN)GREEN" 
-	# @sleep 2 
-	# @echo "$(Yellow)Yellow$(Magenta)Magenta"
-	# @echo -n "$(Black)Black"
-	# @sleep 2
-	@echo  "$(Yellow)Yellow"
-	# @echo  "$(BLACKBG)$(RED)RED"
-	@echo "$(Blue)Blue"
-	@echo "$(Magenta)Magenta"
-	@echo "$(Cyan)Cyan"
-	@echo "$(Gray)Gray$(ENDCOLOR)"
-	@echo "$(Bold)Bold$(ENDCOLOR)"
-	@echo "$(Faint)Faint$(ENDCOLOR)"
-	@echo "$(Italics)Italics$(ENDCOLOR)"
-	@echo "$(Underlined)Underlined$(ENDCOLOR)"
+	@echo -n "$(RED)$(BOLD). "
+	@sleep 0.2
+	@echo -n ". "
+	@sleep 0.2
+	@echo -n ". "
+	@sleep 0.2
+	@echo -n "FCLEANING "
+	@sleep 0.2
+	@echo -n ". "
+	@sleep 0.2
+	@echo -n ". "
+	@sleep 0.2
+	@echo ".$(ENDCOLOR)"
+
 
 re: fclean all
 .PHONY: all clean fclean re
