@@ -1,5 +1,10 @@
 #include <stdio.h>
 int main(){
-    printf("un besito en lo prohibido");
+    char i = 0;
+    while(i != 255){
+        printf("El numero es: %i, el char es: %c\n", i, i);
+        i++;
+    }
+    // printf("un besito en lo prohibido");
     return 0;
 }
