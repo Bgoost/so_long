@@ -1,14 +1,15 @@
 # PRETTY GENERICT STUFF
-ENDCOLOR	=	\e[0m 
+ENDCOLOR	= \e[0m 
 BOLD		= 	\e[1m 
 ITALIC		= 	\e[3m 
 UNDERLINED	=	\e[4m 
 
 # PRETTY STUFF TEXT COLORS
 RED 		=	\e[31m
-YELLOY 		=	\e[33m
+YELLOW 		=	\e[33m
 GREEN 		=	\e[32m
 BLUE 		=	\e[34m
+CYAN 		=	\e[96m
 LIGHT_BLUE	=	\e[94m
 PURPLE		=	\e[35m
 GRAY 		=	\e[90m
@@ -50,17 +51,28 @@ $(NAME): $(OBJ)
 	@echo -n ". "
 	@sleep 0.2
 	@echo ".$(ENDCOLOR)"
+	@printf "\n$(LIGHT_BLUE)  $$(whoami)     ▒▒▒                                    \n          ▒▒ ▒▒           \n     $(LIGHT_BLUE)▒▒  ▒▒   ▒▒                    $(RED)██$(ENDCOLOR)            \n $(LIGHT_BLUE)   ▒▒        ▒▒                  $(RED)████$(ENDCOLOR)            \n  $(LIGHT_BLUE) ▒▒        ▒▒           $(YELLOW)████$(ENDCOLOR)   $(RED)██$(ENDCOLOR)              \n $(LIGHT_BLUE) ▒▒        ▒▒            $(YELLOW)████$(BLUE)██$(GREEN)██$(ENDCOLOR) $(PURPLE)██$(ENDCOLOR) $(BLUE)██$(ENDCOLOR)        \n$(LIGHT_BLUE) ▒▒▒▒▒▒    ▒▒             $(BLUE)██████$(GREEN)████$(PURPLE)████$(BLUE)██$(ENDCOLOR)        \n $(LIGHT_BLUE)    ▒▒  ┌▒▒▒▒▒▒          $(RED)████████$(GREEN)██$(PURPLE)██$(BLUE)████$(ENDCOLOR)        \n   $(LIGHT_BLUE)  ▒▒  └─>$(NAME)      \n  $(LIGHT_BLUE)   ▒▒                   \n\n";
 
 clean:
 	@rm -rf $(OBJ)
+	@echo -n "$(RED)$(BOLD). "
+	@sleep 0.2
+	@echo -n ". "
+	@sleep 0.2
+	@echo -n ". "
+	@sleep 0.2
+	@echo -n "CLEANING "
+	@sleep 0.2
+	@echo -n ". "
+	@sleep 0.2
+	@echo -n ". "
+	@sleep 0.2
+	@echo ".$(ENDCOLOR)"
 
-	@printf "\n$(PURPLE)  $$(whoami)     ▒▒▒                                    \n          ▒▒ ▒▒           ████████████████████████\n     ▒▒  ▒▒   ▒▒          ████████████████████████\n    ▒▒        ▒▒          ████████████████████████\n   ▒▒        ▒▒           ████████████████████████\n  ▒▒        ▒▒            ████████████████████████\n ▒▒▒▒▒▒    ▒▒             ████████████████████████\n[]   ▒▒  ┌▒▒▒▒▒▒          ████████████████████████\n[]   ▒▒  └─>$(NAME)      ████████████████████████\n[][] ▒▒                   ████████████████████████\n                         ████████████████████████\n                         ████████████████████████\n";
 
 
 fclean: clean
 	@rm -rf $(NAME)
-# TETRUAS BUENAS CPIOAS
-	@printf "\n$(BLUE)  $$(whoami)    ▒▒▒  \n              ▒▒ ▒▒ \n    ▒▒  ▒▒   ▒▒\n   ▒▒        ▒▒\n  ▒▒        ▒▒ \n ▒▒        ▒▒  \n▒▒▒▒▒▒    ▒▒    \n    ▒▒  ┌▒▒▒▒▒▒\n    ▒▒  └─>$(NAME)      \n    ▒▒         \n";
 	@echo -n "$(RED)$(BOLD). "
 	@sleep 0.2
 	@echo -n ". "
@@ -74,13 +86,7 @@ fclean: clean
 	@echo -n ". "
 	@sleep 0.2
 	@echo ".$(ENDCOLOR)"
-	# copia de tetris
-	@printf "\n\n                 ▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n               ▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒\n             ▒▒▒▒▒▒▒▒▒       ▒▒▒▒     ▒▒▒▒▒▒▒\n           ▒▒▒▒▒▒▒▒▒         ▒▒      ▒▒▒▒▒▒▒\n         ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n       ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n     ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒▒▒     ▒▒\n   ▒▒▒▒▒▒ $$(whoami) ▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒    ▒▒▒▒\n   ▒▒▒▒▒▒▒ Tetris ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒\n   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒ Barcelona ▒▒▒\n                  ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n     [][][]       ▒▒▒▒▒▒▒▒      |\n     []     []    ▒▒▒▒▒▒▒▒      ╰┈➤$(NAME) \n          [][][]  ▒▒▒▒▒▒▒▒\n";
 
-	@printf "\n\n                 ▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n               ▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒\n             ▒▒▒▒▒▒▒▒▒       ▒▒▒▒     ▒▒▒▒▒▒▒\n           ▒▒▒▒▒▒▒▒▒         ▒▒      ▒▒▒▒▒▒▒\n         ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n       ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n     ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒▒▒     ▒▒\n   ▒▒▒▒▒▒ $$(whoami) ▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒    ▒▒▒▒\n   ▒▒▒▒▒▒▒ Pacman ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒\n   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒ Barcelona ▒▒▒\n   ░░░░░   ░░░░░  ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n  ░░░░▀░░ ░▄ ░▄ ░ ▒▒▒▒▒▒▒▒      |\n  ░░░░░   ░░░░░░░ ▒▒▒▒▒▒▒▒      ╰┈➤$(NAME) \n   ░░░░░  ░ ░ ░ ░ ▒▒▒▒▒▒▒▒\n"
-	
-	
-	@printf "\n\n                 ▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n               ▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒\n             ▒▒▒▒▒▒▒▒▒       ▒▒▒▒     ▒▒▒▒▒▒▒\n           ▒▒▒▒▒▒▒▒▒         ▒▒      ▒▒▒▒▒▒▒\n         ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n       ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n     ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒▒▒     ▒▒\n   ▒▒▒▒▒▒ $$(whoami) ▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒    ▒▒▒▒\n   ▒▒▒▒▒▒▒ Invader ▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒\n   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒ Barcelona ▒▒▒\n      ░       ░   ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n       ░░░░░░░    ▒▒▒▒▒▒▒▒      |\n      ░░ ░░░ ░░   ▒▒▒▒▒▒▒▒      ╰┈➤$(NAME) \n     ░  ░░░░░  ░  ▒▒▒▒▒▒▒▒\n";
 
 re: fclean all
 .PHONY: all clean fclean re
