@@ -29,29 +29,31 @@ SRCS = tpm.c
 
 OBJ = $(SRCS:.c=.o)
 
+SHELL=/bin/bash
 
 %.o : %.c Makefile
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
 all: $(NAME)
+#@echo -en '$(GREEN)$(BOLD).' 
 
 $(NAME): $(OBJ)
 	@$(CC) -o $(NAME) $(OBJ)
-	@echo -n "$(GREEN)$(BOLD). "
+	@echo -e "\033[1;92m"
 	@sleep 0.2
-	@echo -n ". "
+	@echo -en ". "
 	@sleep 0.2
-	@echo -n ". "
+	@echo -en ". "
 	@sleep 0.2
-	@echo -n "COMPILING "
+	@echo -en "COMPILING "
 	@sleep 0.2
-	@echo -n ". "
+	@echo -en ". "
 	@sleep 0.2
-	@echo -n ". "
+	@echo -en ". "
 	@sleep 0.2
-	@echo ".$(ENDCOLOR)"
-	@printf "\n$(LIGHT_BLUE)  $$(whoami)     ▒▒▒                                    \n          ▒▒ ▒▒           \n     $(LIGHT_BLUE)▒▒  ▒▒   ▒▒                    $(RED)██$(ENDCOLOR)            \n $(LIGHT_BLUE)   ▒▒        ▒▒                  $(RED)████$(ENDCOLOR)            \n  $(LIGHT_BLUE) ▒▒        ▒▒           $(YELLOW)████$(ENDCOLOR)   $(RED)██$(ENDCOLOR)              \n $(LIGHT_BLUE) ▒▒        ▒▒            $(YELLOW)████$(BLUE)██$(GREEN)██$(ENDCOLOR) $(PURPLE)██$(ENDCOLOR) $(BLUE)██$(ENDCOLOR)        \n$(LIGHT_BLUE) ▒▒▒▒▒▒    ▒▒             $(BLUE)██████$(GREEN)████$(PURPLE)████$(BLUE)██$(ENDCOLOR)        \n $(LIGHT_BLUE)    ▒▒  ┌▒▒▒▒▒▒          $(RED)████████$(GREEN)██$(PURPLE)██$(BLUE)████$(ENDCOLOR)        \n   $(LIGHT_BLUE)  ▒▒  └─>$(NAME)      \n  $(LIGHT_BLUE)   ▒▒                   \n\n";
+	@echo -e ".$(ENDCOLOR)"
+	@printf "\n$(LIGHT_BLUE)  $$(whoami) ▒▒▒                                    \n          ▒▒ ▒▒           \n     $(LIGHT_BLUE)▒▒  ▒▒   ▒▒                    $(RED)██$(ENDCOLOR)            \n $(LIGHT_BLUE)   ▒▒        ▒▒                  $(RED)████$(ENDCOLOR)            \n  $(LIGHT_BLUE) ▒▒        ▒▒           $(YELLOW)████$(ENDCOLOR)   $(RED)██$(ENDCOLOR)              \n $(LIGHT_BLUE) ▒▒        ▒▒            $(YELLOW)████$(BLUE)██$(GREEN)██$(ENDCOLOR) $(PURPLE)██$(ENDCOLOR) $(BLUE)██$(ENDCOLOR)        \n$(LIGHT_BLUE) ▒▒▒▒▒▒    ▒▒             $(BLUE)██████$(GREEN)████$(PURPLE)████$(BLUE)██$(ENDCOLOR)        \n $(LIGHT_BLUE)    ▒▒  ┌▒▒▒▒▒▒          $(RED)████████$(GREEN)██$(PURPLE)██$(BLUE)████$(ENDCOLOR)        \n   $(LIGHT_BLUE)  ▒▒  └─>$(NAME)      \n  $(LIGHT_BLUE)   ▒▒                   \n\n";
 
 clean:
 	@rm -rf $(OBJ)

@@ -1,6 +1,6 @@
-NAME = fractal
+NAME = so_long
 
-src = so_long.c
+src = so_long.c key_pressed.c maps.c
 
 obj = $(src:.c=.o)
 
